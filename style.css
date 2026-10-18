@@ -4,6 +4,16 @@
     margin: 0;
     padding: 0;
 }
+.screen {
+    background: linear-gradient(180deg, #FDF2E7, #F9E6D4, #F2D9C2);
+}
+@font-face {
+    font-family: 'Amiri';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/amiri/v30/J7acnpd8CGxBHp2VkaY6zp5yGw.woff2') format('woff2');
+}
 
 html {
     scroll-snap-type: y mandatory;
@@ -150,9 +160,309 @@ body {
 
 .divider-image {
     display: block;
-    margin: 0 auto 30px;
+    margin: 0 auto 0px;
 }
 
 .celebration-content h2 {
     text-align: center;
 }
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+    direction: ltr;
+    color: #866739;
+    font-family: 'Alex Brush', cursive;
+}
+
+.countdown div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+}
+
+.countdown div span:first-child {
+    font-size: 38px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.countdown div span:last-child {
+    font-size: 20px;
+    line-height: 1.2;
+}
+.countdown div:not(:last-child)::after {
+    content: ":";
+    position: absolute;
+    margin-left: 70px;
+    font-size: 32px;
+    line-height: 1.4;
+}
+
+.std-eyebrow-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+    color: #866739;
+    font-family: 'Amiri', serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.std-eyebrow-row .line {
+    width: 45px;
+    height: 1px;
+    background-color: #866739;
+}
+
+.std-eyebrow-row .word {
+    white-space: nowrap;
+}
+
+
+.std-calendar-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    margin: 26px auto;
+}
+
+.stdcal {
+    background: linear-gradient(180deg, #fbf5ea, #f6ecda);
+    border: 1px solid #e6d5b4;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(74, 54, 28, 0.12);
+    padding: 20px 14px 16px;
+    direction: ltr;
+    text-align: center;
+}
+
+.stdcal-orn {
+    color: #b89a63;
+    font-size: 15px;
+    letter-spacing: 8px;
+    line-height: 1;
+}
+
+.stdcal-orn-top {
+    margin-bottom: 16px;
+}
+
+.stdcal-orn-bot {
+    margin-top: 18px;
+}
+
+.stdcal-orn .h {
+    color: #c98f86;
+}
+
+.stdcal-month {
+    font-family: 'Amiri', serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #866739;
+    margin-bottom: 20px;
+}
+
+.stdcal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 0px 10px;
+}
+
+.stdcal-wd {
+    font-family: 'Amiri', serif;
+    font-size: 10px;
+    color: #a98f5f;
+    padding-bottom: 8px;
+}
+
+.stdcal-day {
+    font-family: 'Amiri', serif;
+    font-size: 15px;
+    color: #866739;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.stdcal-day.is-empty {
+    visibility: hidden;
+}
+
+.stdcal-day.is-thu {
+    color: #866739;
+    font-weight: 700;
+}
+
+.stdcal-day.is-thu::before {
+    content: "";
+    position: absolute;
+    inset: 6%;
+    border: 2px solid #c99a4a;
+    border-radius: 7px;
+    box-shadow: 0 2px 9px rgba(201, 154, 74, 0.2);
+}
+
+@media screen and (max-width: 479px) {
+    .std-calendar-wrap {
+        max-width: 300px;
+        margin: 22px auto;
+    }
+
+    .stdcal {
+        padding: 18px 12px 14px;
+    }
+
+    .stdcal-month {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    .stdcal-day {
+        font-size: 14px;
+    }
+
+    .stdcal-wd {
+        font-size: 9px;
+    }
+}
+
+
+#section4 {
+    background: linear-gradient(180deg, #FDF2E7, #F9E6D4, #F2D9C2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    gap: 1px;
+}
+
+#section4 .section-divider {
+    width: 180px;
+    height: auto;
+    display: block;
+}
+
+#section4 .celebration-title {
+    font-family: 'Alex Brush', cursive;
+    font-size: 38px;
+    color: #866739;
+    white-space: nowrap;
+}
+
+#section4 .ceremony-title {
+    font-family: 'Amiri', serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: #866739;
+    white-space: nowrap;
+}
+
+#section4 .celebration-message {
+    font-family: 'Amiri', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: #866739;
+    max-width: 340px;
+}
+
+.location-card {
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+    padding: 22px 18px;
+    border: 1px solid #d8c19f;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #FDF2E7, #F9E6D4);
+    box-shadow: 0 8px 20px rgba(74, 54, 28, 0.10);
+    text-align: center;
+    color: #866739;
+}
+
+.location-icon {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.location-address {
+    font-family: 'Amiri', serif;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.location-address strong {
+    display: block;
+    font-weight: 700;
+}
+
+.location-button {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 24px;
+    background-color: #866739;
+    color: #FDF2E7;
+    font-family: 'Amiri', serif;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.location-button:hover {
+    background-color: #6f532d;
+}
+
+#leaf-container {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.falling-leaf {
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+.date-card {
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+    padding: 18px;
+    border: 1px solid #d8c19f;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #FDF2E7, #F9E6D4);
+    box-shadow: 0 8px 20px rgba(74, 54, 28, 0.10);
+    text-align: center;
+    color: #866739;
+}
+
+.date-icon {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.date-text {
+    font-family: 'Amiri', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #866739;
+}
+
+
+
