@@ -72,3 +72,34 @@ body {
 #section4 {
     background-color: #d0d0d0;
 }
+
+.invitation-text {
+    text-align: center;
+    color: #866739;
+    text-shadow: none;
+}
+
+.names {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: clamp(42px, 12vw, 72px);
+    font-weight: normal;
+}
+
+.names span:not(.ampersand) {
+    border: 1px solid #866739;
+    border-radius: 50%;
+    padding: 8px 18px;
+}
+
+.ampersand {
+    font-size: 0.65em;
+}
+
+.date {
+    margin-top: 18px;
+    font-size: clamp(16px, 4vw, 24px);
+    letter-spacing: 3px;
+}
