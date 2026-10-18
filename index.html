@@ -1,27 +1,94 @@
 ﻿
 <!DOCTYPE html>
+
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>محمد & ريم</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
 </head>
+
+<script>
+    function updateCountdown() {
+        const targetDate = new Date("2026-11-12T19:00:00+02:00");
+        const now = new Date();
+        const difference = targetDate.getTime() - now.getTime();
+
+        if (difference <= 0) {
+            document.getElementById("days").textContent = "0";
+            document.getElementById("hours").textContent = "0";
+            document.getElementById("minutes").textContent = "0";
+            document.getElementById("seconds").textContent = "0";
+            return;
+        }
+
+        document.getElementById("days").textContent =
+            Math.floor(difference / (1000 * 60 * 60 * 24));
+
+        document.getElementById("hours").textContent =
+            Math.floor((difference / (1000 * 60 * 60)) % 24);
+
+        document.getElementById("minutes").textContent =
+            Math.floor((difference / (1000 * 60)) % 60);
+
+        document.getElementById("seconds").textContent =
+            Math.floor((difference / 1000) % 60);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+</script>
+
 <body>
 
     <section class="screen" id="section1">
         <div class="invitation-text">
             <div class="names" dir="rtl">
-                <span>محمد</span>
-                <span class="ampersand">&</span>
+                <span>محمد</span> 
+                <span class="ampersand">&</span> 
                 <span>ريم</span>
             </div>
+            <br>
+            <br>
             <div class="date">12.11.2026</div>
         </div>
     </section>
 
-    <section class="screen" id="section2"></section>
-    <section class="screen" id="section3"></section>
+    <section class="screen" id="section2">
+    <div class="section2-text">
+        بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+
+وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنفُسِكُمْ أَزْوَاجًا
+
+لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَوَدَّةً وَرَحْمَةً ۚ
+
+إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ
+<br>
+"And among His signs is that He created for you mates from among yourselves, that you may find tranquility in them, and He placed between you affection and mercy. Indeed in that are signs for a people who reflect."
+<br>
+Surah Ar-Rum — 30:21
+    </div>
+    </section>
+
+
+   <section class="screen" id="section3">
+    <div class="celebration-content">
+        <img src="./divide.webp" alt="" class="divider-image">
+
+        <h2>The celebration begins.</h2>
+
+        <div class="countdown">
+            <div><span id="days">0</span><span>Days</span></div>
+            <div><span id="hours">0</span><span>Hours</span></div>
+            <div><span id="minutes">0</span><span>Minutes</span></div>
+            <div><span id="seconds">0</span><span>Seconds</span></div>
+        </div>
+    </div>
+</section>
+
     <section class="screen" id="section4"></section>
 
 </body>
