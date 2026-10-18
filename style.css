@@ -26,10 +26,39 @@ body {
 }
 
 #section1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-image: url("./swans.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.invitation-text {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.names {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: clamp(42px, 12vw, 72px);
+    font-weight: normal;
+}
+
+.ampersand {
+    font-size: 0.65em;
+}
+
+.date {
+    margin-top: 18px;
+    font-size: clamp(16px, 4vw, 24px);
+    letter-spacing: 3px;
 }
 
 #section2 {
