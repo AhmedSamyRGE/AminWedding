@@ -15,6 +15,16 @@
 
 <body>
 
+<div id="intro-cover"
+     onclick="openInvitation()"
+     style="position:fixed; inset:0; z-index:99999; display:flex; align-items:center; justify-content:center; background:#F9E6D4; cursor:pointer; opacity:1; visibility:visible; transition:opacity 0.8s ease;">
+
+    <img src="Message.png"
+         alt="Open wedding invitation"
+         style="display:block; height:100vh; width:auto; max-width:none; object-fit:contain;">
+</div>
+
+
     <section class="screen" id="section1">
         <div class="invitation-text">
             <div class="names" dir="rtl">
@@ -333,6 +343,44 @@ Surah Ar-Rum — 30:21
         }
     });
 </script>
+
+
+
+
+
+
+
+
+
+<script>
+    function openInvitation() {
+        const introCover = document.getElementById('intro-cover');
+        const music = document.getElementById('background-music');
+
+        if (!introCover || introCover.dataset.opened === 'true') {
+            return;
+        }
+
+        introCover.dataset.opened = 'true';
+
+        music.play().catch(function (error) {
+            console.log('Music playback failed:', error);
+        });
+
+        introCover.style.opacity = '0';
+        introCover.style.pointerEvents = 'none';
+
+        setTimeout(function () {
+            introCover.remove();
+            document.body.style.overflow = '';
+        }, 850);
+    }
+
+    document.body.style.overflow = 'hidden';
+</script>
+
+
+
 
 
 </body>
