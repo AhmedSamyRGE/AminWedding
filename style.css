@@ -26,7 +26,7 @@ body {
 }
 
 #section1 {
-    background-image: url("https://mithaq-invitation.com/templates/ivory-swans/hero-swans.webp");
+    background-image: url("./swans.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
